@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PaymentButton from './PaymentButton';
 
 const ListingCard = ({ listing }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -40,12 +41,13 @@ const ListingCard = ({ listing }) => {
           ))}
         </div>
 
-        <button 
-          className="rent-button"
-          onClick={() => alert(`Renting ${listing.name} for ${listing.price} XMR/day`)}
-        >
-          🚀 Rent Now
-        </button>
+        <PaymentButton 
+          gardenId={listing.id}
+          duration={7}
+          onSuccess={(data) => {
+            console.log('Payment created:', data);
+          }}
+        />
       </div>
     </div>
   );
