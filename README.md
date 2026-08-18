@@ -1,88 +1,88 @@
-# 🌱 EVA IONI
+# EVA IONI
 
-**The First Open-Source Robot for Urban Gardens**
+Open-source robotics and urban-garden experimentation track in the MyZubster ecosystem.
 
-EVA IONI is an open-source robotic platform for urban gardens, powered by MyZubster and Monero (XMR).
+## Status
 
----
+**Experimental / prototype.** EVA IONI combines software interfaces, environmental/irrigation concepts, robotics and telemetry work. The repository should not be read as proof that every listed sensor, actuator, AI capability or payment rail has been physically deployed and validated.
 
-## 🚀 Mission
+## Vision
 
-> *"Democratize food production through open-source robotics and decentralized payments."*
+Explore modular, reproducible robotics for gardens and environmental monitoring while keeping physical safety, privacy and human oversight explicit.
 
-We believe everyone should be able to grow their own food, with technology that is:
-- **Open Source** — No black boxes, no vendor lock-in
-- **Private** — Powered by Monero, no surveillance
-- **Affordable** — Target price < 10.000€
-- **Community-Driven** — Built by the people, for the people
+## Areas of work
 
----
+- environmental telemetry and sensor interfaces;
+- irrigation/control experiments;
+- robotics/actuator integration;
+- API and dashboard integration;
+- simulator/telemetry use with the MyZubster Space Station track;
+- safe experimentation with MyZubster Gateway integrations.
 
-## 🤖 What EVA IONI Can Do
+## Architecture
 
-| Feature | Description | Status |
-|---------|-------------|--------|
-| 🌍 Environmental Sensors | Air quality, weather, acoustics, light | ✅ |
-| 💧 Autonomous Irrigation | Smart watering based on soil moisture | ✅ |
-| 🗺️ Biodiversity Mapping | Species detection, pollinator tracking | ✅ |
-| 🧠 AI Recommendations | Personalized gardening advice | ✅ |
-| 🦾 Robotic Arm (4 DOF) | Irrigation, analysis, harvesting | ✅ |
-| 🔌 Rich APIs | FastAPI + WebSocket + REST | ✅ |
-| 💰 Monero Payments | Private, decentralized payments | ✅ |
+A typical development flow is:
 
----
-
-## 🏗️ Architecture
-
-📱 User Interface (Web/Telegram) → 🌐 MyZubster Gateway (Node.js) → 🤖 EVA IONI Core (Python + FastAPI) → 📡 Sensors & Actuators (Arduino/ESP32) → 🌍 Physical Garden
-
----
-
-## 🔧 Quick Start
-
-### Prerequisites
-- Python 3.10+
-- Node.js 18+
-- Arduino IDE (for sensors)
-
-### Install
-```bash
-git clone https://github.com/MyZubster-Ecosystem/EVA-IONI.git
-cd EVA-IONI
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python app.py
+```text
+UI / simulator
+      |
+      v
+MyZubster / Gateway
+      |
+      v
+EVA IONI software
+      |
+      v
+sensors / actuators
 ```
 
----
+The final physical step is only considered validated when the actual hardware and safety behavior have been tested.
 
-## 📡 API Endpoints
+## Development
 
-### Environmental Sensors
-- GET /api/eva/sensors/environmental — Current data
-- GET /api/eva/sensors/air-quality — Air quality
-- GET /api/eva/sensors/weather — Weather forecast
+The repository historically used Python/FastAPI-oriented components and may also interact with Node.js or Arduino/ESP32 tooling. Follow the dependency files and source tree in the current branch rather than relying on old feature tables.
 
-### Irrigation
-- GET /api/eva/irrigation/status — System status
-- POST /api/eva/irrigation/start — Start watering
-- POST /api/eva/irrigation/stop — Stop watering
+Typical Python setup:
 
----
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-## 🔗 Links
+Run the tests and documented simulator before connecting physical actuators.
 
-- **GitHub**: https://github.com/MyZubster-Ecosystem/EVA-IONI
-- **MyZubster**: https://myzubster.com
-- **Monero**: https://getmonero.org
+## Safety
 
----
+- Prefer simulation before hardware execution.
+- Physical commands must have bounded parameters and fail-safe behavior.
+- Never bypass emergency stops or access controls.
+- Do not use autonomous garden/robot actions where people, animals or property could be harmed without appropriate supervision.
+- Do not store wallet seeds, private keys or production credentials in robot code.
 
-## 📄 License
+## Bounties and payments
 
-MIT — Open source, forever.
+EVA IONI work may be associated with MyZubster bounty issues, but work verification and settlement are separate.
 
----
+- MYZ in the current core platform is an internal reward/accounting ledger.
+- Historical XMR/MYZ bounty amounts do not prove external payment.
+- An issue/PR/merge is not payment evidence.
+- External settlement requires the applicable independent verification.
 
-**🌱 EVA IONI — Cultivating the future, one garden at a time.**
+Read:
+
+- [Canonical Bounty System](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/BOUNTIES.md)
+- [Ecosystem Architecture](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/docs/ECOSYSTEM.md)
+
+See `BOUNTIES.md` for local scope.
+
+## Related repositories
+
+- [myzubster](https://github.com/MyZubster-Ecosystem/myzubster)
+- [MyZubster-Robot](https://github.com/MyZubster-Ecosystem/MyZubster-Robot)
+- [myzubster-space-station](https://github.com/MyZubster-Ecosystem/myzubster-space-station)
+- [MyZubsterGateway](https://github.com/MyZubster-Ecosystem/MyZubsterGateway)
+
+## License
+
+See the repository license file for authoritative terms.
