@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "record_date": "2026-08-31",
+  "entity": "EVA IONI",
+  "planner": "ZORGAX-001",
+  "capability": "build-and-source-v1",
+  "plan_type": "eva_ioni_robot",
+  "generated_by": "zorgax-eva-build-planner-v1",
+  "status": "PLANNED_AND_SOURCED_NO_PURCHASE_HARDWARE_PENDING",
+  "human_project_steward": "DanielIoni-creator",
+  "architecture": [
+    "sensors_environment_soil -> controller -> telemetry_provenance",
+    "controller -> motor_driver -> mobile_base_encoders",
+    "controller -> fail_safe_irrigation_interface -> low_voltage_valve_or_pump",
+    "protected_battery -> fuse -> emergency_stop -> actuators",
+    "protected_battery -> dc_dc -> controller_and_sensors"
+  ],
+  "component_classes": [
+    "controller",
+    "motor-driver",
+    "motors",
+    "environment-sensors",
+    "soil-sensor",
+    "irrigation-interface",
+    "battery",
+    "regulator",
+    "emergency-stop",
+    "chassis",
+    "wiring"
+  ],
+  "required_checks": [
+    "motor_stall_current",
+    "logic_and_power_voltage",
+    "fuses_and_protection",
+    "emergency_stop_independent_from_software",
+    "watchdog_and_communications_timeout",
+    "sensor_calibration",
+    "irrigation_fail_safe",
+    "manual_override",
+    "driver_and_regulator_temperature",
+    "telemetry_provenance_and_reproducibility"
+  ],
+  "execution_sequence": [
+    "freeze_v1_requirements",
+    "simulation_and_data_provenance_validation",
+    "controller_sensor_bench_test_without_actuators",
+    "protected_power_fuse_dc_dc_estop_validation",
+    "bounded_mobile_base_integration",
+    "irrigation_interface_test_load_validation",
+    "failure_override_estop_restart_tests",
+    "human_authorized_bounded_physical_test"
+  ],
+  "production_evidence": {
+    "status_endpoint": "https://www.myzubster.com/api/zorgax/build/status",
+    "supported_template": "eva_ioni_robot",
+    "query_result_verified": true
+  },
+  "purchase_performed": false,
+  "automatic_payment": false,
+  "physical_assembly_completed": false,
+  "boundary": "Zorgax plans, sources and records evidence. Procurement, physical assembly and consequential actuation remain human-authorized and safety-gated.",
+  "tracking_issue": "https://github.com/MyZubster-Ecosystem/EVA-IONI/issues/5",
+  "core_pr": "https://github.com/MyZubster-Ecosystem/myzubster/pull/870"
+}
