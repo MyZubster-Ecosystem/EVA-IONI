@@ -1,0 +1,197 @@
+{
+  "schema": "myzubster.zorgax.eva-bom.v1",
+  "snapshot_date": "2026-08-31",
+  "status": "CANDIDATE_BOM_NO_PURCHASE_AUTHORIZED",
+  "planner": {
+    "entity": "ZORGAX-001",
+    "capability": "build-and-source-v1",
+    "template": "eva_ioni_robot"
+  },
+  "human_steward": {
+    "name": "Daniel Ioni",
+    "github": "DanielIoni-creator"
+  },
+  "purchase_performed": false,
+  "automatic_payment": false,
+  "currency_notes": {
+    "eur_snapshot_subtotal_excluding_usd_motors_and_unresolved_items": 325.95,
+    "motor_pair_usd": 121.90,
+    "usd_eur_reference_rate": 0.86,
+    "motor_pair_fx_only_eur": 104.83,
+    "reference_equivalent_total_eur": 430.78,
+    "warning": "Not a landed procurement budget. Excludes unresolved items, shipping, possible import/tax differences and fuse price."
+  },
+  "items": [
+    {
+      "id": "controller",
+      "name": "ESP32-S3-DevKitC-1-N8R8",
+      "manufacturer": "Espressif Systems",
+      "manufacturer_part": "ESP32-S3-DevKitC-1-N8R8",
+      "vendor": "Mouser Italia",
+      "vendor_part": "356-EP32S3DVKTC1N8R8",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 12.90, "tax_basis": "vendor snapshot"},
+      "state": "GO_CANDIDATE",
+      "source": "https://www.mouser.it/it/ProductDetail/Espressif-Systems/ESP32-S3-DevKitC-1-N8R8"
+    },
+    {
+      "id": "motor_driver",
+      "name": "MDD10A",
+      "manufacturer": "Cytron",
+      "manufacturer_part": "MDD10A",
+      "vendor": "RobotShop EU",
+      "vendor_part": "RB-Cyt-153",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 23.86, "tax_basis": "VAT included"},
+      "state": "GO_CANDIDATE",
+      "constraints": ["5-30V motor supply", "10A continuous/channel", "30A peak/channel", "no reverse polarity protection at Vmotor"],
+      "source": "https://eu.robotshop.com/products/cytron-10a-5-30v-dual-channel-dc-motor-driver"
+    },
+    {
+      "id": "drive_motors",
+      "name": "131:1 Metal Gearmotor 37D 12V with 64 CPR Encoder",
+      "manufacturer": "Pololu",
+      "manufacturer_part": "4756",
+      "qty": 2,
+      "price": {"currency": "USD", "unit": 60.95, "pair": 121.90, "fx_only_pair_eur": 104.83},
+      "state": "VALIDATE",
+      "constraints": ["12V", "76RPM no-load", "5.5A theoretical stall per motor", "stall is not a normal operating condition", "validate chassis load and thermal behavior"],
+      "source": "https://www.pololu.com/product/4756"
+    },
+    {
+      "id": "motor_brackets",
+      "name": "37D mm Metal Gearmotor Bracket Pair",
+      "manufacturer": "Pololu",
+      "manufacturer_part": "1084",
+      "vendor": "RobotShop EU",
+      "vendor_part": "RB-Pol-03",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 13.14, "tax_basis": "VAT included"},
+      "state": "GO_CANDIDATE",
+      "source": "https://eu.robotshop.com/products/pololu-37d-mm-metal-gearmotor-bracket"
+    },
+    {
+      "id": "environment_sensor",
+      "name": "BME280 breakout",
+      "manufacturer": "Adafruit",
+      "manufacturer_part": "2652",
+      "vendor": "BerryBase",
+      "vendor_part": "ADA2652",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 19.90, "tax_basis": "VAT included snapshot"},
+      "state": "GO_CANDIDATE",
+      "constraints": ["I2C/SPI", "recheck stock because locale pages disagree", "not certification-grade measurement"],
+      "source": "https://www.berrybase.de/it/adafruit-bme280-i2c-oder-spi-temperatur-feuchtigkeits.-druck-sensor"
+    },
+    {
+      "id": "soil_sensor",
+      "name": "Gravity Analog Waterproof Capacitive Soil Moisture Sensor",
+      "manufacturer": "DFRobot",
+      "manufacturer_part": "SEN0308",
+      "vendor": "RobotShop EU",
+      "vendor_part": "RB-Dfr-890",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 16.40, "tax_basis": "VAT included"},
+      "state": "GO_CANDIDATE",
+      "constraints": ["3.3-5.5V", "0-3V analog output", "calibrate on actual soil"],
+      "source": "https://eu.robotshop.com/products/dfrobot-gravity-analog-waterproof-capacitive-soil-moisture-sensor"
+    },
+    {
+      "id": "irrigation_interface",
+      "name": "Gravity MOSFET Power Controller",
+      "manufacturer": "DFRobot",
+      "manufacturer_part": "DFR0457",
+      "vendor": "RobotShop EU",
+      "vendor_part": "RB-Dfr-731",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 4.30, "tax_basis": "VAT included"},
+      "state": "GO_CANDIDATE",
+      "constraints": ["5-36V load side", "3.3-10V logic", "inductive loads require flyback diode", "default output OFF", "no autonomous irrigation authorization"],
+      "source": "https://eu.robotshop.com/products/gravity-mosfet-power-controller"
+    },
+    {
+      "id": "logic_dc_dc",
+      "name": "D24V50F5 5V 5A Step-Down",
+      "manufacturer": "Pololu",
+      "manufacturer_part": "2851",
+      "vendor": "TME Italia",
+      "vendor_part": "POLOLU-2851",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit_range": [39.00, 39.71], "tax_basis": "gross snapshot"},
+      "state": "GO_CANDIDATE",
+      "constraints": ["6-38V input", "5V output", "thermal current capacity must be bench-verified"],
+      "source": "https://www.tme.eu/it/katalog/convertitori_113706/p%2Cpololu_959/"
+    },
+    {
+      "id": "emergency_stop",
+      "name": "Harmony XB4 emergency-stop mushroom",
+      "manufacturer": "Schneider Electric",
+      "manufacturer_part": "XB4BS8445",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 42.25},
+      "state": "GO_CANDIDATE",
+      "constraints": ["1NO+1NC", "use NC safety-control path", "do not assume button carries full traction current"],
+      "source": "https://www.se.com/it/it/product/XB4BS8445/"
+    },
+    {
+      "id": "safety_power_relay",
+      "name": "Finder Series 65 power relay",
+      "manufacturer": "Finder",
+      "manufacturer_part": "653190124300",
+      "vendor": "RS Italy",
+      "vendor_part": "282-6700",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit_ex_vat": 14.82, "estimated_unit_inc_22pct_vat": 18.08},
+      "state": "GO_CANDIDATE",
+      "constraints": ["12V DC coil", "SPST/1NO", "30A class", "coil suppression/flyback required", "bench-verify fail-safe wiring"],
+      "source": "https://it.rs-online.com/web/b/finder/"
+    },
+    {
+      "id": "battery",
+      "name": "LiFePO4 12.8V 20Ah",
+      "vendor": "Luciamo",
+      "vendor_part": "TI0238",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 134.90},
+      "state": "VALIDATE",
+      "constraints": ["integrated BMS", "20A max continuous discharge listed", "40A/5s peak listed", "freeze mass/autonomy/chassis fit before approval"],
+      "source": "https://www.luciamo.it/batteria-lifepo4-12-8-v-20-ah/"
+    },
+    {
+      "id": "main_fuse",
+      "name": "ATO 15A blade fuse",
+      "manufacturer": "Littelfuse",
+      "manufacturer_part": "0ATO015.V",
+      "qty": 1,
+      "price": null,
+      "state": "VALIDATE",
+      "constraints": ["15A candidate only", "final rating follows wire gauge, fault path, inrush and trip testing"],
+      "source": "https://www.mouser.it/it/ProductDetail/Littelfuse/0ATO015.V"
+    },
+    {
+      "id": "fuse_holder",
+      "name": "Automotive blade fuse holder",
+      "manufacturer": "Keystone Electronics",
+      "manufacturer_part": "3557-15",
+      "vendor": "Mouser Italia",
+      "vendor_part": "534-3557-15",
+      "qty": 1,
+      "price": {"currency": "EUR", "unit": 1.22},
+      "state": "GO_CANDIDATE",
+      "source": "https://www.mouser.it/ProductDetail/Keystone-Electronics/3557-15"
+    },
+    {"id": "chassis", "state": "TBD_NO_GO", "reason": "Freeze mass, battery envelope, motor/wheel geometry, terrain and centre of gravity first."},
+    {"id": "wheels_hubs", "state": "TBD_NO_GO", "reason": "Wheel diameter and hub interface depend on speed, terrain, clearance and chassis."},
+    {"id": "irrigation_valve_or_pump", "state": "TBD_NO_GO", "reason": "Pressure, flow, medium, tubing and duty cycle are not defined."},
+    {"id": "battery_charger", "state": "TBD_NO_GO", "reason": "Freeze exact battery and use a charger matched to its recommended charge current/voltage."},
+    {"id": "harness", "state": "TBD_NO_GO", "reason": "Wire gauge, connectors, grounding and fuse placement depend on measured current and chassis routing."}
+  ],
+  "pre_purchase_gate": [
+    "freeze target mass, payload, terrain, speed and autonomy",
+    "freeze chassis, wheel and motor-mount geometry",
+    "freeze battery physical envelope and matching charger",
+    "freeze irrigation pressure, flow and valve/pump requirements",
+    "run final Zorgax-to-human-review BOM lock"
+  ],
+  "governance_boundary": "ZORGAX PLAN/SOURCE != PURCHASE != ASSEMBLY != SAFETY APPROVAL"
+}
