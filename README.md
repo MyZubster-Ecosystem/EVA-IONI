@@ -10,6 +10,23 @@ Open-source robotics and urban-garden experimentation track in the MyZubster eco
 
 **Experimental / prototype.** EVA IONI combines software interfaces, environmental/irrigation concepts, robotics and telemetry work. The repository should not be read as proof that every listed sensor, actuator, AI capability or payment rail has been physically deployed and validated.
 
+## Human stewardship & MyZubster identity
+
+Within the MyZubster ecosystem, **EVA IONI is a digital / robotics / automation project identity and technical component associated with Daniel Ioni (`DanielIoni-creator`) as its human project steward.**
+
+```text
+Daniel Ioni
+  -- PROJECT_STEWARD_OF / ASSOCIATED_WITH -->
+EVA IONI
+```
+
+Daniel remains the human final authority for consequential project-level decisions involving EVA. EVA IONI is **not presented as a human person, independent legal person, autonomous contracting party, or independently authorized financial/physical decision-maker**.
+
+Canonical relationship record:
+
+- [Daniel Ioni ↔ EVA IONI](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/docs/identity/DANIEL-IONI-EVA-IONI-RELATIONSHIP.md)
+- [Machine-readable relationship](https://github.com/MyZubster-Ecosystem/myzubster/blob/main/docs/identity/DANIEL-IONI-EVA-IONI-RELATIONSHIP.json)
+
 ## Vision
 
 Explore modular, reproducible robotics for gardens and environmental monitoring while keeping physical safety, privacy and human oversight explicit.
